@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;500;600;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .container {
+        @apply max-w-[calc(1500px+40px)] px-5 mx-auto;
+    }
+}
+
+* {
+    @apply font-fira-sans;
+}
+
+body {
+    background: linear-gradient(rgb(87, 44, 179, 0.5), transparent);
+}
+.border_b_rounded {
+    @apply border-b-[3px] border-primary;
+}
+
+.sc-iNWwEs.gEpdue {
+    @apply h-11;
+}
+button.sc-eKszNL.hTwLpN {
+    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-white rounded !border-none;
+}
+
+.sc-iNWwEs.gEpdue {
+    @apply mx-0;
+}
+.sc-olbas.uhQpk {
+    @apply bg-primary hover:bg-primary-dark duration-200 rounded [&>span]:text-white !border-none;
+}
+
+.sc-jfmDQi.byjoRM {
+    @apply rounded bg-black/5;
+}
