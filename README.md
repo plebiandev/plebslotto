@@ -16,7 +16,7 @@
 ## Quickstart
 
 ```
-git clone https://github.com/Digimonger/lottofrontend
+git clone https://github.com/plebiandev/plebslotto.git
 cd lottofrontend
 yarn
 yarn dev
