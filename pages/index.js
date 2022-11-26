@@ -30,10 +30,10 @@ export default function Home ()
                             <div className="grow flex justify-center items-center">
                                 <div className="bg-white p-6 rounded-lg text-center space-y-2">
                                     <p className="text-xl font-semibold">
-                                        Please switch to a supported chainId.
+                                        Please switch to the Polygon Network.
                                     </p>
                                     <p className="">
-                                        The supported Chain Ids are:{ " " }
+                                        The supported Chain is Polygon ID:{ " " }
                                         { `${ supportedChains.join( ", " ) }` }
                                     </p>
                                 </div>
@@ -43,7 +43,7 @@ export default function Home ()
                 ) : (
                     <div className="grow flex justify-center items-center">
                         <div className="bg-white p-6 text-xl font-semibold rounded-lg">
-                            Please connect to a Wallet
+                            Please click on Connect Wallet to login
                         </div>
                     </div>
                 ) }
