@@ -9,7 +9,7 @@ const CurrentNumberOfPlayer = ( { numberOfPlayers } ) =>
         <div>
             <div className="bg-white rounded-md py-5 pb-6 px-6 border_b_rounded">
                 <h3 className="font-semibold text-xl md:text-2xl">
-                    The next jackpot is: { numberOfPlayers } MATIC
+                    Next jackpot: { numberOfPlayers } MATIC
                 </h3>
             </div>
         </div>

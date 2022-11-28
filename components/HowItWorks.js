@@ -1,6 +1,7 @@
 import React from "react"
 
-const howItWorks = [ "Only 1 MATIC per entry.", "Wait for the draw.", "Check if you've won." ]
+
+const howItWorks = [ "Only 1 MATIC per entry.", "When it's time for the draw, the Chainlink VRF picks a winner. Read more about Chainlink VRF in our docs.", "Check if you've won." ]
 
 const HowItWorks = () =>
 {
