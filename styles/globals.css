@@ -15,7 +15,8 @@
 }
 
 body {
-    background: linear-gradient(rgb(87, 44, 179, 0.5), transparent);
+   /* background: linear-gradient(rgb(87, 44, 179, 0.5), transparent); */
+   background: linear-gradient(to top,#20262B,#36284E, #3F255A,#312942);
 }
 .border_b_rounded {
     @apply border-b-[3px] border-primary;

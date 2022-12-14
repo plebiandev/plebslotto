@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { useNotification } from "web3uikit"
 import { ethers } from "ethers"
 import HowItWorks from "./HowItWorks"
-import CurrentNumberOfPlayer from "./CurrentNumberOfPlayer"
+import Jackpot from "./Jackpot"
 import PreviousWinner from "./PreviousWinner"
 
 export default function LotteryEntrance ()
@@ -125,43 +125,66 @@ export default function LotteryEntrance ()
             <div className="container">
                 { raffleAddress ? (
                     <div className="py-8 space-y-4">
-                        <div className="bg-white flex flex-col sm:flex-row sm:justify-between sm:items-center px-7 py-5 rounded-md border_b_rounded gap-y-2">
-                            <h1 className="font-semibold text-2xl lg:text-3xl">
-                                The fairest lottery around! No central authority, just pure crypto goodness.
-                            </h1>
+
+
+                        <div class="font-bold rounded-lg p-8 ">
+                            <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100  to-rose-600"
+                            >The Fairest</h1>
+                            <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100 to-rose-800"
+                            >Lottery Around</h1>
+                            <br></br>
+                            <p className="text-fuchsia-100 font-thin text-l md:text-2xl">No central authority, just pure crypto goodness</p>
+
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="flex-1 w-64 p-8"  >
+
+
+                            <button
+                                className="bg-fuchsia-500 relative hover:bg-primary-dark text-white font-semibold py-3.5 px-5 rounded-md text-sm md:text-base"
+                                onClick={ async () =>
+                                    await enterRaffle( {
+                                        // onComplete:
+                                        // onError:
+                                        onSuccess: handleSuccess,
+                                        onError: ( error ) => console.log( error ),
+                                    } )
+                                }
+                                disabled={ isLoading || isFetching }
+                            >
+                                { isLoading || isFetching ? (
+                                    <div className="animate-spin spinner-border h-6 w-6 border-b-2 rounded-full"></div>
+                                ) : (
+                                    "PLAY for 1 MATIC"
+                                ) }
+                            </button>
+
+
+
+
+
 
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[55%,auto] gap-4">
-                            <HowItWorks />
+
                             <div className="space-y-4">
-                                <CurrentNumberOfPlayer numberOfPlayers={ numberOfPlayers } />
+                                <Jackpot numberOfPlayers={ numberOfPlayers } />
                                 <PreviousWinner recentWinner={ recentWinner } />
-                                <button
-                                    className="bg-primary relative hover:bg-primary-dark text-white font-semibold py-2.5 px-5 rounded-md text-sm md:text-base"
-                                    onClick={ async () =>
-                                        await enterRaffle( {
-                                            // onComplete:
-                                            // onError:
-                                            onSuccess: handleSuccess,
-                                            onError: ( error ) => console.log( error ),
-                                        } )
-                                    }
-                                    disabled={ isLoading || isFetching }
-                                >
-                                    { isLoading || isFetching ? (
-                                        <div className="animate-spin spinner-border h-6 w-6 border-b-2 rounded-full"></div>
-                                    ) : (
-                                        "PLAY"
-                                    ) }
-                                </button>
 
                             </div>
+
+
                         </div>
 
-                        {/* <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
-                    <div>The current number of players is: {numberOfPlayers}</div>
-                    <div>The most previous winner was: {recentWinner}</div> */}
+
                     </div>
                 ) : (
                     <div>Please connect your wallet to Polygon </div>
