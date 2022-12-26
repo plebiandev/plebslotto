@@ -1,5 +1,4 @@
 import { contractAddresses, abi } from "../constants"
-// dont export from moralis when using react
 import { useMoralis, useWeb3Contract } from "react-moralis"
 import { useEffect, useState } from "react"
 import { useNotification } from "web3uikit"
@@ -7,13 +6,15 @@ import { ethers } from "ethers"
 import HowItWorks from "./HowItWorks"
 import Jackpot from "./Jackpot"
 import PreviousWinner from "./PreviousWinner"
+import CountdownTimer from './CountdownTimer'
+
 
 export default function LotteryEntrance ()
 {
     const { Moralis, isWeb3Enabled, chainId: chainIdHex } = useMoralis()
     // These get re-rendered every time due to our connect button!
     const chainId = parseInt( chainIdHex )
-    // console.log(`ChainId is ${chainId}`)
+
     const raffleAddress = chainId in contractAddresses ? contractAddresses[ chainId ][ 0 ] : null
 
     // State hooks
@@ -21,6 +22,9 @@ export default function LotteryEntrance ()
     const [ entranceFee, setEntranceFee ] = useState( "0" )
     const [ numberOfPlayers, setNumberOfPlayers ] = useState( "0" )
     const [ recentWinner, setRecentWinner ] = useState( "0" )
+    const [ nextDrawTimestamp, setNextDraw ] = useState( "0" )
+
+    const [ countdownTimerTargetTimestamp, setCountdownTimerTargetTimestamp ] = useState( 0 )
 
     const dispatch = useNotification()
 
@@ -60,41 +64,40 @@ export default function LotteryEntrance ()
         params: {},
     } )
 
-    async function updateUIValues ()
+    const { runContractFunction: getNextDraw } = useWeb3Contract( {
+        abi: abi,
+        contractAddress: raffleAddress,
+        functionName: "getLastTimeStamp",
+        params: {},
+    } )
+
+
+    function updateUIValues ()
     {
-        // Another way we could make a contract call:
-        // const options = { abi, contractAddress: raffleAddress }
-        // const fee = await Moralis.executeFunction({
-        //     functionName: "getEntranceFee",
-        //     ...options,
-        // })
-        const entranceFeeFromCall = ( await getEntranceFee() ).toString()
-        const numPlayersFromCall = ( await getPlayersNumber() ).toString()
-        const recentWinnerFromCall = await getRecentWinner()
-        setEntranceFee( entranceFeeFromCall )
-        setNumberOfPlayers( numPlayersFromCall )
-        setRecentWinner( recentWinnerFromCall )
+
+
+        async function update ()
+        {
+            const entranceFeeFromCall = ( await getEntranceFee() ).toString()
+            const numPlayersFromCall = ( await getPlayersNumber() ).toString()
+            const recentWinnerFromCall = await getRecentWinner()
+            const nextDrawFromCall = ( await getNextDraw() ).toString()
+            setEntranceFee( entranceFeeFromCall )
+            setNumberOfPlayers( numPlayersFromCall )
+            setRecentWinner( recentWinnerFromCall )
+            setNextDraw( nextDrawFromCall )
+        }
+
+        if ( isWeb3Enabled )
+        {
+            update()
+        }
     }
 
     useEffect( () =>
     {
-        if ( isWeb3Enabled )
-        {
-            updateUIValues()
-        }
+        updateUIValues()
     }, [ isWeb3Enabled ] )
-    // no list means it'll update everytime anything changes or happens
-    // empty list means it'll run once after the initial rendering
-    // and dependencies mean it'll run whenever those things in the list change
-
-    // An example filter for listening for events, we will learn more on this next Front end lesson
-    // const filter = {
-    //     address: address,
-    //     topics: [
-    //         // the name of the event, parnetheses containing the data type of each event, no spaces
-    //         utils.id("RaffleEnter(address)"),
-    //     ],
-    // }
 
     const handleNewNotification = () =>
     {
@@ -120,6 +123,63 @@ export default function LotteryEntrance ()
         }
     }
 
+    async function calculateNextDrawTimestamp ()
+    {
+        const nextDraw = await getNextDraw()
+        const nextDrawInt = parseInt( nextDraw )
+        const drawInterval = parseInt( '0' )
+        const nextDrawTimestamp = nextDrawInt + drawInterval
+        return nextDrawTimestamp
+    }
+
+    async function updateTimestamp ()
+    {
+        try
+        {
+            const nextDrawTimestamp = await calculateNextDrawTimestamp()
+            setNextDraw( nextDrawTimestamp )
+
+
+
+            //console.log( nextDrawTimestamp )
+            //console.log( typeof nextDrawTimestamp )
+        } catch ( error )
+        {
+            console.error( error )
+        }
+    }
+
+    useEffect( () =>
+    {
+        updateTimestamp()
+
+
+    }, [] )
+
+
+
+
+
+    //const nextDrawInt = parseInt( nextDrawTimestamp )
+    //const drawInterval = parseInt( '6045001' ) //update!!!
+
+    useEffect( () =>
+    {
+        const nextDrawInt = parseInt( nextDrawTimestamp )
+
+        // Update the state variable with the updated value of nextDrawInt
+        setCountdownTimerTargetTimestamp( nextDrawInt )
+    }, [ nextDrawTimestamp ] )
+
+
+    // console.log( countdownTimerTargetTimestamp )
+
+    const propTime = countdownTimerTargetTimestamp + 604500
+
+    // console.log( propTime )
+    // console.log( typeof countdownTimerTargetTimestamp )
+
+
     return (
         <section className="grow">
             <div className="container">
@@ -127,7 +187,7 @@ export default function LotteryEntrance ()
                     <div className="py-8 space-y-4">
 
 
-                        <div class="font-bold rounded-lg p-8 ">
+                        <div className="font-bold rounded-lg p-8 ">
                             <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100  to-rose-600"
                             >The Fairest</h1>
                             <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100 to-rose-800"
@@ -144,7 +204,7 @@ export default function LotteryEntrance ()
 
 
 
-                        <div class="flex-1 w-64 p-8"  >
+                        <div className="flex-1 w-64 p-8"  >
 
 
                             <button
@@ -177,9 +237,16 @@ export default function LotteryEntrance ()
 
                             <div className="space-y-4">
                                 <Jackpot numberOfPlayers={ numberOfPlayers } />
+
+                                <CountdownTimer targetTime={ 1672483770 } />
+
                                 <PreviousWinner recentWinner={ recentWinner } />
 
+
+
                             </div>
+
+
 
 
                         </div>
@@ -191,5 +258,15 @@ export default function LotteryEntrance ()
                 ) }
             </div>
         </section>
+
+
     )
+
+
+
+
+
 }
+
+
+

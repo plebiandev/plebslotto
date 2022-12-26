@@ -20,7 +20,7 @@ export default function Home ()
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col ">
                 <Header />
                 { isWeb3Enabled ? (
                     <>

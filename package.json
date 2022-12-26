@@ -10,6 +10,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "magic-sdk": "^11.0.0",
     "moralis": "^1.8.0",
     "next": "12.1.5",
     "react": "18.0.0",
