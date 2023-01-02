@@ -23,16 +23,21 @@ export default function Header ()
                             </a>
                         </Link>
                     </div>
+                    <div className="text-fuchsia-100 hover:text-fuchsia-500">
+                        <a href="https://docs.plebslotto.io/" target="_blank" rel="noopener noreferrer">
+                            Docs
+                        </a>
+                    </div>
 
                     <div className="text-fuchsia-100 hover:text-fuchsia-500">
-                        <Link href={ "/" }>
+                        <a href="https://docs.plebslotto.io/how-it-works/how-to-play" target="_blank" rel="noopener noreferrer">
                             How it works
-                        </Link>
+                        </a>
                     </div>
                     <div className="text-fuchsia-100 hover:text-fuchsia-500" >
-                        <Link href={ "/" }>
+                        <a href="https://docs.plebslotto.io/frequently-asked-questions/faqs" target="_blank" rel="noopener noreferrer">
                             FAQs
-                        </Link>
+                        </a>
                     </div>
                     <div>
                         <ConnectButton moralisAuth={ false } />
