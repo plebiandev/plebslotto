@@ -37,14 +37,14 @@ const CountdownTimer = ( { targetTime } ) =>
 
             <ClockContainer>
 
-                <div class="basis-1/6 hover:text-">{ timeLeft.days.toString().padStart( 2, '0' ) }</div>
-                <div class="basis-1/6">{ timeLeft.hours.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6">{ timeLeft.days.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6 ">{ timeLeft.hours.toString().padStart( 2, '0' ) }</div>
                 <div class="basis-1/6">{ timeLeft.minutes.toString().padStart( 2, '0' ) }</div>
                 <div class="basis-1/6">{ timeLeft.seconds.toString().padStart( 2, '0' ) }</div>
 
             </ClockContainer>
 
-            <div className="flex flex-row text-fuchsia-200 px-6 text-1xl">
+            <div className="flex flex-row text-fuchsia-200 px-6 text-1xl ">
                 <div class="basis-1/6">Days</div>
                 <div class="basis-1/6">Hours</div>
                 <div class="basis-1/6">Minutes</div>

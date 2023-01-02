@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import LotteryEntrance from "../components/LotteryEntrance"
 import { useMoralis } from "react-moralis"
 import Footer from "../components/Footer"
+import NoWeb3 from "../components/NoWeb3"
 
 const supportedChains = [ "137" ]
 
@@ -41,11 +42,7 @@ export default function Home ()
                         ) }
                     </>
                 ) : (
-                    <div className="grow flex justify-center items-center">
-                        <div className="bg-white p-6 text-xl font-semibold rounded-lg">
-                            Please click on Connect Wallet to login
-                        </div>
-                    </div>
+                    <NoWeb3 />
                 ) }
                 <Footer />
             </div>
