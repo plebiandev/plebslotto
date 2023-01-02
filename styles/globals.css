@@ -21,25 +21,25 @@ body {
 
 
 .border_b_rounded {
-    @apply border-b-[3px] border-primary;
+    @apply border-b-[3px] bg-violet-600;
 }
 
 .sc-iNWwEs.gEpdue {
     @apply h-11;
 }
 button.sc-eKszNL.hTwLpN {
-    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-white rounded !border-none;
+    @apply bg-violet-600 hover:bg-violet-900 duration-200 [&>span]:text-white rounded !border-none;
 }
 
 .sc-iNWwEs.gEpdue {
     @apply mx-0;
 }
 .sc-olbas.uhQpk {
-    @apply bg-primary hover:bg-primary-dark duration-200 rounded [&>span]:text-white !border-none;
+    @apply bg-violet-600 hover:bg-violet-900 duration-200 rounded [&>span]:text-white !border-none;
 }
 
 .sc-jfmDQi.byjoRM {
-    @apply rounded bg-black/5;
+    @apply rounded bg-stone-900;
 }
   
   h1 {
