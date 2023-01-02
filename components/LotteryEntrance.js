@@ -238,7 +238,7 @@ export default function LotteryEntrance ()
                             <div className="space-y-4">
                                 <Jackpot numberOfPlayers={ numberOfPlayers } />
 
-                                <CountdownTimer targetTime={ 1672483770 } />
+                                <CountdownTimer targetTime={ propTime } />
 
                                 <PreviousWinner recentWinner={ recentWinner } />
 
