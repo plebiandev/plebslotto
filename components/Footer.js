@@ -6,7 +6,7 @@ const Footer = () =>
         <footer className="mt-auto  py-6">
             <div className="container">
                 <p className="text-center text-white text-xs">
-                    &copy; Copyrights { new Date().getFullYear() }. All rights reserved by{ " " }
+                    &copy; Copyrights 2022 - { new Date().getFullYear() }. All rights reserved by{ " " }
                     <strong className="text-fuchsia-500">Plebs Lotto</strong>
                 </p>
             </div>
