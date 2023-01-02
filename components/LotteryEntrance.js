@@ -140,9 +140,6 @@ export default function LotteryEntrance ()
             setNextDraw( nextDrawTimestamp )
 
 
-
-            //console.log( nextDrawTimestamp )
-            //console.log( typeof nextDrawTimestamp )
         } catch ( error )
         {
             console.error( error )
@@ -158,11 +155,6 @@ export default function LotteryEntrance ()
 
 
 
-
-
-    //const nextDrawInt = parseInt( nextDrawTimestamp )
-    //const drawInterval = parseInt( '6045001' ) //update!!!
-
     useEffect( () =>
     {
         const nextDrawInt = parseInt( nextDrawTimestamp )
@@ -172,12 +164,10 @@ export default function LotteryEntrance ()
     }, [ nextDrawTimestamp ] )
 
 
-    // console.log( countdownTimerTargetTimestamp )
 
     const propTime = countdownTimerTargetTimestamp + 604500
 
-    // console.log( propTime )
-    // console.log( typeof countdownTimerTargetTimestamp )
+
 
 
     return (

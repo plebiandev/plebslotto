@@ -1,13 +1,16 @@
 import React from "react"
 import { ConnectButton } from "web3uikit"
-import { css } from '@emotion/react'
+import styled from 'styled-components'
 
 
 
-const CustomConnectButton = () => (
-    <ConnectButton className="bg-red-500 rounded-full text-white p-4 font-bold" />
-);
-
+const CustomConnectButton = styled( ConnectButton )`
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+`;
 
 const NoWeb3 = () =>
 {
