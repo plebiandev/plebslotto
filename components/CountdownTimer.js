@@ -33,22 +33,22 @@ const CountdownTimer = ( { targetTime } ) =>
 
     return (
         <div>
-            <p className="text-fuchsia-100 font-thin text-l md:text-2xl px-6">Next draw in:</p>
+            <p className="text-fuchsia-100 font-thin text-l md:text-2xl px-6">Next draw in</p>
 
             <ClockContainer>
 
-                <div class="basis-1/4">{ timeLeft.days.toString().padStart( 2, '0' ) }:</div>
-                <div class="basis-1/4">{ timeLeft.hours.toString().padStart( 2, '0' ) }:</div>
-                <div class="basis-1/4">{ timeLeft.minutes.toString().padStart( 2, '0' ) }:</div>
-                <div class="basis-1/4">{ timeLeft.seconds.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6 hover:text-">{ timeLeft.days.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6">{ timeLeft.hours.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6">{ timeLeft.minutes.toString().padStart( 2, '0' ) }</div>
+                <div class="basis-1/6">{ timeLeft.seconds.toString().padStart( 2, '0' ) }</div>
 
             </ClockContainer>
 
-            <div className="flex flex-row text-fuchsia-200 px-6 text-2xl">
-                <div class="basis-1/4"> Days</div>
-                <div class="basis-1/4">Hours</div>
-                <div class="basis-1/4">Minutes</div>
-                <div class="basis-1/4">Seconds</div>
+            <div className="flex flex-row text-fuchsia-200 px-6 text-1xl">
+                <div class="basis-1/6">Days</div>
+                <div class="basis-1/6">Hours</div>
+                <div class="basis-1/6">Minutes</div>
+                <div class="basis-1/6">Seconds</div>
 
 
             </div>
