@@ -22,23 +22,7 @@ body {
     @apply border-b-[3px] border-primary;
 }
 
-.sc-iNWwEs.gEpdue {
-    @apply h-11;
-}
-button.sc-eKszNL.hTwLpN {
-    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-white rounded !border-none;
-}
 
-.sc-iNWwEs.gEpdue {
-    @apply mx-0;
-}
-.sc-olbas.uhQpk {
-    @apply bg-primary hover:bg-primary-dark duration-200 rounded [&>span]:text-white !border-none;
-}
-
-.sc-jfmDQi.byjoRM {
-    @apply rounded bg-black/5;
-}
   
   h1 {
     z-index: 2;

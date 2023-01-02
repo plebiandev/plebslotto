@@ -1,5 +1,13 @@
 import React from "react"
 import { ConnectButton } from "web3uikit"
+import { css } from '@emotion/react'
+
+
+
+const CustomConnectButton = () => (
+    <ConnectButton className="bg-red-500 rounded-full text-white p-4 font-bold" />
+);
+
 
 const NoWeb3 = () =>
 {
@@ -23,7 +31,7 @@ const NoWeb3 = () =>
 
                     <div className="flex-1 w-64 p-8"  >
 
-                        <ConnectButton moralisAuth={ false } />
+                        <CustomConnectButton moralisAuth={ false } />
 
                     </div>
 

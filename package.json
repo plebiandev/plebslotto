@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "fs": "^0.0.1-security",
     "magic-sdk": "^11.0.0",
     "moralis": "^1.8.0",
