@@ -3,7 +3,6 @@ import { useMoralis, useWeb3Contract } from "react-moralis"
 import { useEffect, useState } from "react"
 import { useNotification } from "web3uikit"
 import { ethers } from "ethers"
-import HowItWorks from "./HowItWorks"
 import Jackpot from "./Jackpot"
 import PreviousWinner from "./PreviousWinner"
 import CountdownTimer from './CountdownTimer'
@@ -17,8 +16,6 @@ export default function LotteryEntrance ()
 
     const raffleAddress = chainId in contractAddresses ? contractAddresses[ chainId ][ 0 ] : null
 
-    // State hooks
-    // https://stackoverflow.com/questions/58252454/react-hooks-using-usestate-vs-just-variables
     const [ entranceFee, setEntranceFee ] = useState( "0" )
     const [ numberOfPlayers, setNumberOfPlayers ] = useState( "0" )
     const [ recentWinner, setRecentWinner ] = useState( "0" )
@@ -167,7 +164,8 @@ export default function LotteryEntrance ()
 
     const propTime = countdownTimerTargetTimestamp + 604500
 
-
+    // console.log( propTime )
+    // console.log( typeof countdownTimerTargetTimestamp )
 
 
     return (
@@ -184,14 +182,7 @@ export default function LotteryEntrance ()
                             >Lottery Around</h1>
                             <br></br>
                             <p className="text-fuchsia-100 font-thin text-l md:text-2xl">No central authority, just pure crypto goodness</p>
-
-
-
                         </div>
-
-
-
-
 
 
                         <div className="flex-1 w-64 p-8"  >
@@ -215,9 +206,6 @@ export default function LotteryEntrance ()
                                     "PLAY for 1 MATIC"
                                 ) }
                             </button>
-
-
-
 
 
 

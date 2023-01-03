@@ -32,12 +32,6 @@ const NoWeb3 = () =>
 
                     </div>
 
-                    <div className="flex-1 w-64 p-8"  >
-
-                        <CustomConnectButton moralisAuth={ false } />
-
-                    </div>
-
                     <div className="font-bold rounded-lg p-8 ">
 
                         <p className="text-fuchsia-100 font-thin text-l md:text-2xl">To play, connect your Web 3 wallet of choice.</p>
