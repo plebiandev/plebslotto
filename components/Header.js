@@ -40,7 +40,9 @@ export default function Header ()
                         </a>
                     </div>
                     <div>
-                        <ConnectButton moralisAuth={ false } />
+                        <ConnectButton moralisAuth={ false }
+                            className="bg-fuchsia-100 font-bold py-2 px-4 rounded"
+                        />
                     </div>
                 </nav>
             </div>
