@@ -34,7 +34,7 @@ const NoWeb3 = () =>
 
                     <div className="font-bold rounded-lg p-8 ">
 
-                        <p className="text-fuchsia-100 font-thin text-l md:text-2xl">To play, connect your Web 3 wallet of choice.</p>
+                        <p className="text-fuchsia-100 font-thin text-l md:text-2xl">Connect your wallet to play!</p>
 
                     </div>
 
