@@ -16,9 +16,8 @@ export default function Home ()
             <Head>
                 <title>Plebs Lotto</title>
                 <meta property="og:title" content="Plebs Lotto" />
-                <meta property="og:description" content="Decentralized Crypto Lottery!" />
-
-
+                <meta property="og:description" content="The decentralized Crypto Lottery!" />
+                <meta property="og:image" content="/img/moon.svg" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="min-h-screen flex flex-col ">
