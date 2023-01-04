@@ -1,8 +1,20 @@
 import Link from "next/link"
 import { ConnectButton } from "web3uikit"
+import styled from 'styled-components'
+
+
+const NewConnectButton = styled( ConnectButton )`
+font-weight: bold;
+color: red;
+`;
+
+
 
 export default function Header ()
 {
+
+
+
     return (
         <header>
             <div className="container">
@@ -40,8 +52,8 @@ export default function Header ()
                         </a>
                     </div>
                     <div>
-                        <ConnectButton moralisAuth={ false }
-                            className="bg-fuchsia-100 font-bold py-2 px-4 rounded"
+                        <NewConnectButton moralisAuth={ false }
+
                         />
                     </div>
                 </nav>

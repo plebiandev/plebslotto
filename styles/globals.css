@@ -23,6 +23,7 @@ body {
     @apply border-b-[3px] border-primary;
 }
 
+
 .sc-iNWwEs.gEpdue {
     @apply h-11;
 }
@@ -40,3 +41,7 @@ button.sc-eKszNL.hTwLpN {
 .sc-jfmDQi.byjoRM {
     @apply rounded bg-black/5;
 }
+
+button.sc-eKszNL.iNgMlR {
+    @apply bg-violet-600 hover:bg-violet-900 duration-200 [&>span]:text-white rounded !border-none;
+} 
