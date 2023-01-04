@@ -25,7 +25,7 @@ const NoWeb3 = () =>
                     <div className="font-bold rounded-lg p-8 ">
                         <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100  to-rose-600"
                         >The Fairest</h1>
-                        <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100 to-rose-800"
+                        <h1 class="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-indigo-100 to-rose-800 pb-1"
                         >Lottery Around</h1>
                         <br></br>
                         <p className="text-fuchsia-100 font-thin text-l md:text-2xl">No central authority, just pure crypto goodness</p>
