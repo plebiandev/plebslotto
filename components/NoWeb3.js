@@ -29,18 +29,12 @@ const NoWeb3 = () =>
                         >Lottery Around</h1>
                         <br></br>
                         <p className="text-fuchsia-100 font-thin text-l md:text-2xl">No central authority, just pure crypto goodness</p>
-
-                    </div>
-
-                    <div className="font-bold rounded-lg p-8 ">
-
+                        <br></br>
+                        <br></br>
                         <p className="text-fuchsia-100 font-thin text-l md:text-2xl">Connect your wallet to play!</p>
 
+
                     </div>
-
-
-
-
 
                 </div>
 
