@@ -58,9 +58,21 @@ button.sc-eKszNL.iNgMlR {
 }
 
 .sc-jOrMOR.dATLYY{
+	font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
     color: #fae8ff ;
+    
 }
 
 .sc-cxabCf.cWXaHK{
     color: #fae8ff ;
 }
+
+.sc-cxabCf.cWXaHK{
+    content: " MATIC";
+}
+
+.sc-jOrMOR.dATLYY::after {
+    content: " MATIC";
+  }
+
