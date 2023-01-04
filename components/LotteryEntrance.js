@@ -189,7 +189,7 @@ export default function LotteryEntrance ()
 
 
                             <button
-                                className="bg-fuchsia-500 relative hover:bg-primary-dark text-white font-semibold py-3.5 px-5 rounded-md text-sm md:text-base"
+                                className=" bg-violet-900 relative hover:bg-fuchsia-500  text-white font-semibold py-3.5 px-5 rounded-md text-sm md:text-base"
                                 onClick={ async () =>
                                     await enterRaffle( {
                                         // onComplete:
