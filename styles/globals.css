@@ -65,10 +65,12 @@ button.sc-eKszNL.iNgMlR {
 }
 
 .sc-cxabCf.cWXaHK{
+	font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
     color: #fae8ff ;
 }
 
-.sc-cxabCf.cWXaHK{
+.sc-cxabCf.cWXaHK::after{
     content: " MATIC";
 }
 
