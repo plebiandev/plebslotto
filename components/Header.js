@@ -3,18 +3,8 @@ import { ConnectButton } from "web3uikit"
 import styled from 'styled-components'
 
 
-const NewConnectButton = styled( ConnectButton )`
-font-weight: bold;
-color: red;
-`;
-
-
-
 export default function Header ()
 {
-
-
-
     return (
         <header>
             <div className="container">
@@ -52,7 +42,7 @@ export default function Header ()
                         </a>
                     </div>
                     <div>
-                        <NewConnectButton moralisAuth={ false }
+                        <ConnectButton moralisAuth={ false }
 
                         />
                     </div>

@@ -1,6 +1,6 @@
 import { contractAddresses, abi } from "../constants"
 import { useMoralis, useWeb3Contract } from "react-moralis"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useNotification } from "web3uikit"
 import { ethers } from "ethers"
 import Jackpot from "./Jackpot"
@@ -96,8 +96,12 @@ export default function LotteryEntrance ()
         updateUIValues()
     }, [ isWeb3Enabled ] )
 
+    const audioRef = useRef()
+
+
     const handleNewNotification = () =>
     {
+        audioRef.current.play();
         dispatch( {
             type: "info",
             message: "Success! You have entered the lotto!",
@@ -187,6 +191,7 @@ export default function LotteryEntrance ()
 
                         <div className="flex-1 w-64 p-8"  >
 
+                            <audio ref={ audioRef } src="/cash-register-purchase.mp3" />
 
                             <button
                                 className=" bg-violet-600 relative hover:bg-fuchsia-500  text-white font-semibold py-3.5 px-5 rounded-md text-sm md:text-base"
