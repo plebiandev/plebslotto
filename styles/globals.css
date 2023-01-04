@@ -23,19 +23,24 @@ body {
     @apply border-b-[3px] border-primary;
 }
 
-.sc-iNWwEs.eSmbQy {
-    @apply h-11;
-}
 
 .sc-iNWwEs.eSmbQy {
+    @apply h-11;
     @apply mx-0;
+    border: none;
+    box-sizing: border-box;
+    line-height: 1;
+    outline: none;
+    padding: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    margin: 0 16px;
+    white-space: nowrap;
 }
 
 .sc-iNWwEs.gEpdue {
     @apply h-11;
-}
-
-.sc-iNWwEs.gEpdue {
     @apply mx-0;
 }
 
@@ -50,6 +55,23 @@ button.sc-eKszNL.hTwLpN {
 
 button.sc-eKszNL.iNgMlR {
     @apply bg-violet-600 hover:bg-violet-900 duration-200 [&>span]:text-zinc-50 rounded !border-none;
+    background: none;
+    rsor: pointer;
+    font: inherit;
+    outline: inherit;
+    -webkit-font-smoothing: antialiased;
+    color: #68738D;
+    fill: #68738D;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    height: 100%;
+    padding: 4px 16px;
+   
 } 
 
 .sc-jfmDQi.byjoRM {
@@ -72,6 +94,7 @@ button.sc-eKszNL.iNgMlR {
 	font-size: 0.875rem; /* 14px */
     line-height: 1.25rem; /* 20px */
     color: #fae8ff ;
+
 }
 
 .sc-jOrMOR.dATLYY::after {
