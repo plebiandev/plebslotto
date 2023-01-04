@@ -39,12 +39,17 @@ body {
     @apply mx-0;
 }
 
+button.sc-fLlhyt.kYKtpL{
+    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-zinc-50 rounded !border-none;
+}
+
+
 button.sc-eKszNL.hTwLpN {
-    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-white rounded !border-none;
+    @apply bg-primary hover:bg-primary-dark duration-200 [&>span]:text-zinc-50 rounded !border-none;
 }
 
 button.sc-eKszNL.iNgMlR {
-    @apply bg-violet-600 hover:bg-violet-900 duration-200 [&>span]:text-white rounded !border-none;
+    @apply bg-violet-600 hover:bg-violet-900 duration-200 [&>span]:text-zinc-50 rounded !border-none;
 } 
 
 .sc-jfmDQi.byjoRM {
@@ -60,8 +65,7 @@ button.sc-eKszNL.iNgMlR {
 .sc-jOrMOR.dATLYY{
 	font-size: 0.875rem; /* 14px */
     line-height: 1.25rem; /* 20px */
-    color: #fae8ff ;
-    
+    color: #fae8ff ;   
 }
 
 .sc-cxabCf.cWXaHK{
@@ -77,4 +81,45 @@ button.sc-eKszNL.iNgMlR {
 .sc-jOrMOR.dATLYY::after {
     content: " MATIC";
   }
+
+  .sc-evZas.cPNcQg::after {
+    content: " MATIC";
+  }
+
+  .sc-evZas.cPNcQg{
+    -webkit-font-smoothing: antialiased;
+    fill: #68738D;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-weight: 550;
+
+  }
+
+  .sc-hiMGwR.lcyeQD{
+    -webkit-font-smoothing: antialiased;
+    fill: #68738D;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-weight: 550;
+
+}
+
+.sc-hiMGwR.deAaMT{
+    -webkit-font-smoothing: antialiased;
+    fill: #68738D;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-weight: 550;
+
+
+}
 
