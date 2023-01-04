@@ -15,10 +15,10 @@ export default function Home ()
         <div>
             <Head>
                 <title>Plebs Lotto</title>
-                <meta
-                    name="description"
-                    content="Play to win crypto"
-                />
+                <meta property="og:title" content="Plebs Lotto" />
+                <meta property="og:description" content="Decentralized Crypto Lottery!" />
+
+
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="min-h-screen flex flex-col ">
