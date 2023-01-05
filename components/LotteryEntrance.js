@@ -96,8 +96,15 @@ export default function LotteryEntrance ()
         updateUIValues()
     }, [ isWeb3Enabled ] )
 
-    const audioRef = useRef()
+    useEffect( () =>
+    {
+        updateUIValues()
 
+
+    }, [ numberOfPlayers ] )
+
+
+    const audioRef = useRef()
 
     const handleNewNotification = () =>
     {
@@ -118,6 +125,7 @@ export default function LotteryEntrance ()
             await tx.wait( 1 )
             updateUIValues()
             handleNewNotification( tx )
+
         } catch ( error )
         {
             console.log( error )

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ConnectButton } from "web3uikit"
-import styled from 'styled-components'
+
 
 
 export default function Header ()
